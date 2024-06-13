@@ -1,23 +1,35 @@
 <template>
   <div>
-    <h1>{{ message }}</h1>
+ 
     <AppMain/>
-    <ProjectCard/>
+ 
   </div>
+
+  <p>
+    <strong>Current route path:</strong> {{ $route.fullPath }}
+  </p>
+  <nav>
+    <RouterLink to="/">Go to Home</RouterLink>
+    <RouterLink to="/portfolio">Go to Portfolio</RouterLink>
+    <RouterLink to="/contacts">Go to contacts</RouterLink>
+
+  </nav>
+  <main>
+    <RouterView />
+  </main>
+
 </template>
 
 <script>
 import AppMain from './components/AppMain.vue';
-import ProjectCard from "./components/ProjectCard.vue";
   export default {
     components:{
       AppMain,
-      ProjectCard,
     },
 
     data(){
       return {
-        message: 'Ciao',
+       
       }
     }
   }
